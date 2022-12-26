@@ -1,0 +1,16 @@
+//Global style
+
+body {
+
+}
+
+// Easy-table override
+:root {
+  --easy-table-header-font-size: 14px;
+  --easy-table-header-height: auto;
+  --easy-table-header-item-padding: 10px 15px;
+
+  --easy-table-body-row-height: auto;
+  --easy-table-body-row-font-size: 14px;
+  --easy-table-body-item-padding: 10px 15px;
+}

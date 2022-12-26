@@ -1,0 +1,15 @@
+window.variables = {
+  // Api
+  apiUrl: 'site.local',
+
+  // Keycloak
+  keycloakEnable: true,
+  authUrl: 'keycloak.url',
+  authRealm: 'vue',
+  authClient: 'vue',
+
+  // Sentry
+  sentryEnable: true,
+  sentryDns: 'sentry.dns',
+  sentryTargetUrls: ['localhost', 'localhost:5173', /^\//],
+};
