@@ -84,7 +84,7 @@ Berisi konfigurasi library 3rd party yang digunakan
 3. UI Page -> ModuleNameUI.vue [Page]
 4. UI Component -> components/ModuleName.vue [Component]
 4. Constant -> moduleName.constant.js
-5. Composable Method Name -> mixinName_methodName
+5. Composable Method Name -> composableName_methodName
 6. State Name -> moduleName_stateName
    ....
 

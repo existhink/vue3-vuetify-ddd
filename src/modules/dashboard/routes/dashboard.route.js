@@ -6,6 +6,7 @@ const routes = [
     name: 'dashboard',
     meta: {
       layout: LAYOUT.DEFAULT,
+      breadcrumb: 'Dashboard',
     },
     component: () => import('../ui/DashboardUI.vue'),
   },

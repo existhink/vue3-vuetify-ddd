@@ -3,6 +3,10 @@
     <AppBaseDialogAlert v-bind="dialog.options" @ok="onCloseAlert" />
 
     <form @submit.prevent="onSubmit">
+      <AppFormGroup v-slot="attrs" :v="v$.photo" name="Photo">
+        <AppBaseImageUploader v-bind="attrs" v-model="form.photo" width="200px" height="200px" />
+      </AppFormGroup>
+
       <AppFormGroup v-slot="attrs" :v="v$.firstName" name="First Name">
         <AppBaseLabel> <VIcon icon="mdi-checkbox-marked-circle" /> First Name (Custom Label) </AppBaseLabel>
         <VTextField
@@ -20,8 +24,8 @@
         <VTextField v-model.trim="form.contact.email" v-bind="attrs" variant="outlined" density="compact" />
       </AppFormGroup>
       <div class="d-flex justify-end" style="gap: 10px">
-        <VBtn type="submit" color="primary" elevation="0">Submit</VBtn>
-        <VBtn type="button" color="secondary" elevation="0" @click="onClose">Close</VBtn>
+        <VBtn type="submit" color="primary" variant="flat">Submit</VBtn>
+        <VBtn type="button" color="secondary" variant="flat" @click="onClose">Close</VBtn>
       </div>
     </form>
   </div>
@@ -52,6 +56,7 @@ const onOpenDialog = () => {
 
 // Section: Form
 const form = ref({
+  photo: null,
   firstName: '',
   lastName: '',
   contact: {
@@ -60,6 +65,7 @@ const form = ref({
 });
 
 const rules = computed(() => ({
+  photo: { required },
   firstName: { required },
   lastName: { required },
   contact: {
@@ -89,6 +95,7 @@ const onCloseAlert = () => {
 const onClose = () => {
   form.value = {
     ...form.value,
+    photo: null,
     firstName: null,
     lastName: null,
     contact: {

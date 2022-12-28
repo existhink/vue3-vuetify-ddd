@@ -4,10 +4,10 @@
       <DashboardForm @ok="onCloseDialog" @close="onCloseDialog" />
     </AppBaseDialog>
 
-    <div class="pa-5">
+    <div class="pa-3 pt-0">
       <AppBaseTableHeader @change="appTable_updateFilter">
         <template #left>
-          <VBtn color="primary" elevation="0" @click="onShowDialogForm">Sample Dialog</VBtn>
+          <VBtn color="primary" variant="flat" @click="onShowDialogForm">Sample Dialog</VBtn>
         </template>
       </AppBaseTableHeader>
       <AppDataTable

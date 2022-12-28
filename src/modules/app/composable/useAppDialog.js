@@ -5,28 +5,12 @@ const useAppDialog = () => {
     options: {
       show: false,
       type: 'success',
-      title: 'Dialog Title',
+      title: '',
       desc: '',
-      onOk: undefined,
-      onCancel: undefined,
+      onOk: undefined, // Optional, better directly from component
+      onCancel: undefined, // Optional, better directly from component
     },
   });
-
-  const dialog_showDialog = (options = {}) => {
-    dialog.options = {
-      ...dialog.options,
-      ...options,
-      show: true,
-    };
-  };
-
-  const dialog_closeDialog = (options = {}) => {
-    dialog.options = {
-      ...dialog.options,
-      ...options,
-      show: false,
-    };
-  };
 
   const dialog_setValue = (key, value) => {
     dialog.options[key] = value;
@@ -37,6 +21,20 @@ const useAppDialog = () => {
       ...dialog.options,
       ...options,
     };
+  };
+
+  const dialog_showDialog = (options = {}) => {
+    dialog_setValues({
+      ...options,
+      show: true,
+    });
+  };
+
+  const dialog_closeDialog = (options = {}) => {
+    dialog_setValues({
+      ...options,
+      show: false,
+    });
   };
 
   return {

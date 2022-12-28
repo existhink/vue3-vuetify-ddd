@@ -1,18 +1,24 @@
 <template>
   <VApp class="app-main">
     <VNavigationDrawer v-model="drawer"> </VNavigationDrawer>
-    <VAppBar>
+    <VAppBar density="comfortable" color="primary" elevation="0">
       <VAppBarNavIcon @click="toggleDrawer"></VAppBarNavIcon>
-      <VToolbarTitle>Application <VBtn @click="onLogout">Logout</VBtn></VToolbarTitle>
+      <VToolbarTitle>Vue Skeleton</VToolbarTitle>
+      <VSpacer />
+      <VBtn variant="flat" color="secondary" @click="onLogout">Logout</VBtn>
     </VAppBar>
     <VMain>
+      <AppBaseBreadcrumb />
       <RouterView />
     </VMain>
   </VApp>
 </template>
 
 <script setup>
+// Vue
 import { ref } from 'vue';
+
+// Composable
 import useKeycloak from '@/modules/app/composable/useKeycloak';
 
 const drawer = ref(false);

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-md-center justify-md-space-between">
+  <div class="d-flex align-md-center justify-md-space-between mt-3">
     <!-- @Todo-->
     <div>Table Information</div>
 
@@ -8,6 +8,7 @@
       :length="9"
       :total-visible="7"
       :disabled="loading"
+      density="compact"
       class="custom-pagination"
       @update:model-value="onChangePagination"
     />

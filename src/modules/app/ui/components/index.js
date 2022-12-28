@@ -1,6 +1,8 @@
 import {
+  AppBaseBreadcrumb,
   AppBaseDialog,
   AppBaseDialogAlert,
+  AppBaseImageUploader,
   AppBaseLabel,
   AppBaseTableFooter,
   AppBaseTableHeader,
@@ -27,7 +29,9 @@ const BaseComponentRegister = app => {
     .component('AppBaseDialog', AppBaseDialog)
     .component('AppBaseDialogAlert', AppBaseDialogAlert)
     .component('AppBaseTableHeader', AppBaseTableHeader)
-    .component('AppBaseTableFooter', AppBaseTableFooter);
+    .component('AppBaseTableFooter', AppBaseTableFooter)
+    .component('AppBaseImageUploader', AppBaseImageUploader)
+    .component('AppBaseBreadcrumb', AppBaseBreadcrumb);
 
   /**
    * Base Layouts

@@ -1,16 +1,16 @@
 <template>
   <VDialog :model-value="show" persistent max-width="400px">
     <VCard>
-      <img v-if="actualIcon" :src="actualIcon" class="icon" />
+      <img v-if="actualIcon" :src="actualIcon" class="icon" alt="alert-icon" />
       <div class="text-center">
         <h4>{{ title }}</h4>
         <p>{{ desc }}</p>
       </div>
       <div class="d-flex align-center justify-center pa-5">
-        <VBtn :loading="okBtnLoading" elevation="0" color="primary" @click="onOk">
+        <VBtn :loading="okBtnLoading" color="primary" variant="flat" @click="onOk">
           {{ okBtnText }}
         </VBtn>
-        <VBtn v-if="cancelBtnShow" :loading="cancelBtnLoading" @click="onCancel">
+        <VBtn v-if="cancelBtnShow" :loading="cancelBtnLoading" variant="flat" @click="onCancel">
           {{ cancelBtnText }}
         </VBtn>
       </div>
