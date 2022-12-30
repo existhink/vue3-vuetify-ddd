@@ -24,7 +24,7 @@ const props = defineProps({
   },
   gutterBottom: {
     type: String,
-    default: 'mb-2',
+    default: 'mb-3',
   },
   nameAsLabel: {
     type: Boolean,

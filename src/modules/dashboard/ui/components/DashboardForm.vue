@@ -1,27 +1,20 @@
 <template>
   <div class="pa-5">
-    <AppBaseDialogAlert v-bind="dialog.options" @ok="onCloseAlert" />
+    <AppBaseDialogAlert v-bind="dialog" @ok="onCloseAlert" />
 
     <form @submit.prevent="onSubmit">
       <AppFormGroup v-slot="attrs" :v="v$.photo" name="Photo">
         <AppBaseImageUploader v-bind="attrs" v-model="form.photo" width="200px" height="200px" />
       </AppFormGroup>
-
       <AppFormGroup v-slot="attrs" :v="v$.firstName" name="First Name">
         <AppBaseLabel> <VIcon icon="mdi-checkbox-marked-circle" /> First Name (Custom Label) </AppBaseLabel>
-        <VTextField
-          v-model.trim="form.firstName"
-          v-bind="attrs"
-          placeholder="First Name"
-          variant="outlined"
-          density="compact"
-        />
+        <VTextField v-model.trim="form.firstName" v-bind="attrs" placeholder="First Name" />
       </AppFormGroup>
       <AppFormGroup v-slot="attrs" :v="v$.lastName" name="Last Name" name-as-label name-as-placeholder>
-        <VTextField v-model.trim="form.lastName" v-bind="attrs" variant="outlined" density="compact" />
+        <VTextField v-model.trim="form.lastName" v-bind="attrs" />
       </AppFormGroup>
       <AppFormGroup v-slot="attrs" :v="v$.contact.email" name="Email" name-as-label name-as-placeholder>
-        <VTextField v-model.trim="form.contact.email" v-bind="attrs" variant="outlined" density="compact" />
+        <VTextField v-model.trim="form.contact.email" v-bind="attrs" />
       </AppFormGroup>
       <div class="d-flex justify-end" style="gap: 10px">
         <VBtn type="submit" color="primary" variant="flat">Submit</VBtn>

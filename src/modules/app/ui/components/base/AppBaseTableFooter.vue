@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-md-center justify-md-space-between mt-3">
+  <div class="d-flex flex-column flex-md-row align-md-center justify-md-space-between mt-3">
     <!-- @Todo-->
     <div>Table Information</div>
 

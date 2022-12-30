@@ -1,13 +1,23 @@
 <template>
   <div>
-    <AppBaseDialog v-bind="dialog.options" max-width="800">
+    <AppBaseDialog v-bind="dialog" max-width="800">
       <DashboardForm @ok="onCloseDialog" @close="onCloseDialog" />
     </AppBaseDialog>
 
     <div class="pa-3 pt-0">
       <AppBaseTableHeader @change="appTable_updateFilter">
         <template #left>
-          <VBtn color="primary" variant="flat" @click="onShowDialogForm">Sample Dialog</VBtn>
+          <VBtn
+            v-if="$can($permission.DASHBOARD.CAN_SHOW_SAMPLE_DIALOG)"
+            color="primary"
+            @click="onShowDialogForm"
+          >
+            Sample Dialog (Hide)
+          </VBtn>
+
+          <VBtn v-if="$can($permission.DASHBOARD.READ)" color="primary" @click="onShowDialogForm">
+            Sample Dialog
+          </VBtn>
         </template>
       </AppBaseTableHeader>
       <AppDataTable
@@ -45,8 +55,7 @@ const {
   dashboard_clearAllRequest,
 } = useDashboard();
 
-const { appTable_data, appTable_updateFilter, appTable_mapSort, appTable_mapFilter, appTable_buildParams } =
-  useAppTable();
+const { appTable_data, appTable_updateFilter, appTable_buildParams } = useAppTable();
 
 const headers = computed(() => [
   { text: 'ID', value: 'id', sortable: true },
@@ -54,34 +63,27 @@ const headers = computed(() => [
   { text: 'Body', value: 'body', sortable: true },
 ]);
 
-// Initialize params (optional) or put in fetch function
-appTable_data.filter.limit = 10;
-
 const fetchPosts = async () => {
-  const params = appTable_buildParams(
-    appTable_mapFilter({
-      search: 's',
-    }),
-    appTable_mapSort({
-      body: 'change-sort-param-in-here',
-    }),
-  );
+  const params = appTable_buildParams({
+    mappingFilter: {
+      search: 'change-filter-search-to-custom',
+    },
+    mappingSort: {
+      body: 'change-sort-body-to-custom',
+    },
+  });
 
   // Simplify
   // const params = appTable_buildParams();
 
-  await dashboard_fetchPosts(params);
+  await dashboard_fetchPosts({ limit: 10, ...params });
 };
 
 const fetchPost = async () => {
   await dashboard_fetchPost(2);
 };
 
-watch(
-  () => appTable_data,
-  async () => await fetchPosts(),
-  { deep: true },
-);
+watch(appTable_data, fetchPosts, { deep: true });
 
 onBeforeMount(async () => {
   dashboard_store.$reset();
@@ -96,6 +98,10 @@ onBeforeUnmount(() => {
 
 // -- Dialog
 const { dialog, dialog_showDialog, dialog_closeDialog } = useAppDialog();
-const onShowDialogForm = () => dialog_showDialog();
-const onCloseDialog = () => dialog_closeDialog();
+const onShowDialogForm = () => {
+  dialog_showDialog();
+};
+const onCloseDialog = () => {
+  dialog_closeDialog();
+};
 </script>

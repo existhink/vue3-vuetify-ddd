@@ -1,24 +1,22 @@
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 const useAppDialog = () => {
-  const dialog = reactive({
-    options: {
-      show: false,
-      type: 'success',
-      title: '',
-      desc: '',
-      onOk: undefined, // Optional, better directly from component
-      onCancel: undefined, // Optional, better directly from component
-    },
+  const dialog = ref({
+    show: false,
+    type: 'success',
+    title: '',
+    desc: '',
+    onOk: undefined, // Optional, better directly from component
+    onCancel: undefined, // Optional, better directly from component
   });
 
   const dialog_setValue = (key, value) => {
-    dialog.options[key] = value;
+    dialog.value[key] = value;
   };
 
   const dialog_setValues = (options = {}) => {
-    dialog.options = {
-      ...dialog.options,
+    dialog.value = {
+      ...dialog.value,
       ...options,
     };
   };

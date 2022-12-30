@@ -1,7 +1,7 @@
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 const useAppTable = () => {
-  const appTable_data = reactive({
+  const appTable_data = ref({
     filter: {},
     options: {},
   });
@@ -11,7 +11,7 @@ const useAppTable = () => {
    * @param val
    */
   const appTable_updateFilter = val => {
-    appTable_data.filter = { ...appTable_data.filter, ...val };
+    appTable_data.value.filter = { ...appTable_data.value.filter, ...val };
   };
 
   /**
@@ -20,7 +20,7 @@ const useAppTable = () => {
    * @returns {{sort: null}}
    */
   const appTable_mapSort = (mapping = {}) => {
-    const { sortBy, sortType } = appTable_data.options;
+    const { sortBy, sortType } = appTable_data.value.options;
 
     let actualSort = null;
 
@@ -38,8 +38,8 @@ const useAppTable = () => {
    * @returns {{}}
    */
   const appTable_mapFilter = (mapping = {}) => {
-    return Object.keys(appTable_data.filter).reduce((acc, key) => {
-      acc[mapping?.[key] ?? key] = appTable_data.filter[key];
+    return Object.keys(appTable_data.value.filter).reduce((acc, key) => {
+      acc[mapping?.[key] ?? key] = appTable_data.value.filter[key];
       return acc;
     }, {});
   };
@@ -50,9 +50,9 @@ const useAppTable = () => {
    * @param mappingFilter
    * @returns {{}}
    */
-  const appTable_buildParams = (mappingSort = {}, mappingFilter = {}) => {
-    const options = mappingSort ?? appTable_data.options;
-    const filter = mappingFilter ?? appTable_data.filter;
+  const appTable_buildParams = ({ mappingFilter = {}, mappingSort = {} }) => {
+    const filter = appTable_mapFilter(mappingFilter);
+    const options = appTable_mapSort(mappingSort);
     return { ...options, ...filter };
   };
 

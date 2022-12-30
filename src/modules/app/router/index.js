@@ -1,5 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { AppCommonEntryPoint, AppCommonNotFound } from '@/modules/app/ui/components/common';
+import {
+  AppCommonEntryPoint,
+  AppCommonNotAuthorized,
+  AppCommonNotFound,
+} from '@/modules/app/ui/components/common';
+import { can } from '@/plugins/permission';
 
 /**
  * Autoload route
@@ -25,7 +30,14 @@ const autoLoadRoute = async () => {
       // Auto register routes
       ...routes,
 
-      // Not Found
+      // 403
+      {
+        path: '/not-authorized',
+        name: 'not-authorized',
+        component: AppCommonNotAuthorized,
+      },
+
+      // 404
       {
         path: '/:catchAll(.*)',
         component: AppCommonNotFound,
@@ -33,8 +45,17 @@ const autoLoadRoute = async () => {
     ],
   });
 
-  router.beforeEach(() => {
-    //
+  router.beforeEach((to, from, next) => {
+    const permission = to.meta?.permission ?? false;
+    if (permission) {
+      if (can(permission)) {
+        next();
+      } else {
+        next({ name: 'not-authorized' });
+      }
+    } else {
+      next();
+    }
   });
 
   return router;

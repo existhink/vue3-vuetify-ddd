@@ -3,6 +3,7 @@ import App from './App.vue';
 import pinia from '@/modules/app/store';
 import autoLoadRoute from '@/modules/app/router';
 import vuetify from '@/plugins/vuetify';
+import permission from '@/plugins/permission';
 import BaseComponentRegister from '@/modules/app/ui/components';
 import KeycloakInit from '@/plugins/keycloak';
 import SentryInit from '@/plugins/sentry';
@@ -21,6 +22,7 @@ const AppInit = async (callback = null) => {
   app.use(pinia);
   app.use(router);
   app.use(vuetify);
+  app.use(permission);
 
   // Base Components
   BaseComponentRegister(app);

@@ -1,0 +1,7 @@
+// @Todo
+export const PERMISSION = {
+  DASHBOARD: {
+    READ: 'DASHBOARD_READ',
+    CAN_SHOW_SAMPLE_DIALOG: 'CAN_SHOW_SAMPLE_DIALOG',
+  },
+};

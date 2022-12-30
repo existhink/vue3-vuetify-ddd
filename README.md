@@ -1,4 +1,4 @@
-# MySaku
+# BCA mySaku Admin 
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -13,31 +13,31 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ```sh
-npm install
+yarn or yarn install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+yarn dev
 ```
 
 ### Compile and Minify for Production
 
 ```sh
-npm run build
+yarn build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-npm run test:unit
+yarn test:unit
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-npm run lint
+yarn lint
 ```
 
 ### Folder Structure
@@ -83,9 +83,9 @@ Berisi konfigurasi library 3rd party yang digunakan
 2. Routes -> moduleName.route.js
 3. UI Page -> ModuleNameUI.vue [Page]
 4. UI Component -> components/ModuleName.vue [Component]
-4. Constant -> moduleName.constant.js
-5. Composable Method Name -> composableName_methodName
-6. State Name -> moduleName_stateName
+5. Constant -> moduleName.constant.js
+6. Composable Method Name -> composableName_methodName
+7. State Name -> moduleName_stateName
    ....
 
 #### Comments
@@ -107,4 +107,19 @@ const func = (string = '') => {
 ```
 
 Comment menggunakan dokumentasi dari plain javascript [https://javascript.info/comments](resource)
+
+#### Dependencies & Libraries
+| Library               | Description                    |
+|-----------------------|--------------------------------|
+| vue-router            | Router                         |
+| vuetify               | UI Library                     |
+| vue3-easy-data-table  | Data Table                     |
+| keycloak-js           | Keycloak Adapter               |
+| pinia                 | State Management               |
+| @vuelidate            | Form Validator                 |
+| axios                 | Http Client                    |
+| lodash                | Helper Array/Object            |
+| moment                | Helper Date                    |
+| @sentry/vue           | Error & Performance Monitoring |
+| @vueuse               | Composable Helper              |
 

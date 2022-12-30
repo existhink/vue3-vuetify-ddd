@@ -1,40 +1,34 @@
 <template>
-  <div class="d-flex flex-column flex-md-row justify-md-center align-md-center pa-0 mb-6">
-    <slot name="left" />
+  <div class="d-flex flex-column flex-sm-row justify-md-center align-md-center mb-6">
+    <div class="mb-6 mb-md-0">
+      <slot name="left" />
+    </div>
     <VSpacer />
     <div v-if="!hideOptionList" class="d-flex align-center mb-2 mb-md-0">
       <AppBaseLabel text="Show" no-gutter />
-      <VSelect
-        v-model="localLimit"
-        :items="optionList"
-        :loading="loading"
-        hide-details
-        density="compact"
-        variant="outlined"
-        class="mx-3"
-      />
+      <VSelect v-model="localLimit" :items="optionList" :loading="loading" hide-details class="mx-3" />
       <AppBaseLabel text="Entries" no-gutter />
     </div>
     <VSpacer />
-    <div v-if="!hideSearch" style="max-width: 200px; width: 100%">
+    <div v-if="!hideSearch" :style="searchStyled">
       <VTextField
         v-model="localSearch"
         placeholder="Search"
         autocomplete="off"
-        density="compact"
         max-length="255"
-        variant="outlined"
         hide-details
         clearable
+        append-inner-icon="mdi-magnify"
       />
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import AppBaseLabel from '@/modules/app/ui/components/base/AppBaseLabel.vue';
 import { useDebounce } from '@vueuse/core';
+import { useDisplay } from 'vuetify';
 
 defineProps({
   hideOptionList: {
@@ -69,14 +63,14 @@ const localSearch = ref('');
 const localSearchDebounced = useDebounce(localSearch, 400);
 const localLimit = ref(10);
 
-watch(
-  () => localSearchDebounced.value,
-  value => {
-    emit('change', { search: value, page: 1 });
-  },
-);
+watch(localSearchDebounced, value => {
+  emit('change', { search: value, page: 1 });
+});
 
 watch(localLimit, value => {
   emit('change', { limit: value, page: 1 });
 });
+
+const { smAndUp } = useDisplay();
+const searchStyled = computed(() => ({ width: smAndUp.value ? '200px' : 'auto' }));
 </script>

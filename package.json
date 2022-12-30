@@ -1,6 +1,6 @@
 {
   "name": "mysaku",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -15,7 +15,6 @@
     "@vueup/vue-quill": "^1.0.1",
     "@vueuse/core": "^9.6.0",
     "axios": "^1.2.1",
-    "jwt-decode": "^3.1.2",
     "keycloak-js": "^20.0.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",

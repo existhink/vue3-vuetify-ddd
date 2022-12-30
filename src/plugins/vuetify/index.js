@@ -16,6 +16,21 @@ const vuetify = createVuetify({
       },
     },
   },
+  defaults: {
+    VBtn: {
+      variant: 'flat',
+    },
+    VTextField: {
+      variant: 'outlined',
+      density: 'compact',
+      hideDetails: 'auto',
+    },
+    VSelect: {
+      variant: 'outlined',
+      density: 'compact',
+      hideDetails: 'auto',
+    },
+  },
 });
 
 export default vuetify;
