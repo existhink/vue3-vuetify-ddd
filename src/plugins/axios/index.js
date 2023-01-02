@@ -1,20 +1,23 @@
+// Lodash
+import isEmpty from 'lodash/isEmpty';
+
+// Axios
 import axios from 'axios';
+
+// Store
 import { useAuthStore } from '@/modules/auth/store/auth.store';
 
 const http = axios.create({
-  baseURL: window.variables.apiUrl,
+  baseURL: import.meta.env.VITE_APP_API_URL ? `${import.meta.env.VITE_APP_API_URL}/api` : '/api',
 });
 
 http.interceptors.request.use(async config => {
-  if (window.variables.keycloakEnable) {
-    const store = useAuthStore();
-    const token = store.auth_token;
-    if (token) {
-      config.headers = {
-        Authorization: `Bearer ${token}`,
-      };
-    }
+  const store = useAuthStore();
+  const token = store.auth_token;
+  if (!isEmpty(token)) {
+    config.headers['Accept-Language'] = localStorage.getItem('lang') || 'en';
   }
+
   return config;
 });
 

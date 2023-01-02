@@ -4,6 +4,7 @@ import {
   AppBaseDialogAlert,
   AppBaseImageUploader,
   AppBaseLabel,
+  AppBaseNavbar,
   AppBaseTableFooter,
   AppBaseTableHeader,
   AppBaseWrapper,
@@ -23,15 +24,16 @@ const BaseComponentRegister = app => {
    * To make a components can access without import please put in below
    */
   app
-    .component('AppBaseWrapper', AppBaseWrapper)
-    .component('AppFormGroup', AppFormGroup)
-    .component('AppBaseLabel', AppBaseLabel)
+    .component('AppBaseBreadcrumb', AppBaseBreadcrumb)
     .component('AppBaseDialog', AppBaseDialog)
     .component('AppBaseDialogAlert', AppBaseDialogAlert)
+    .component('AppBaseImageUploader', AppBaseImageUploader)
+    .component('AppBaseLabel', AppBaseLabel)
+    .component('AppBaseNavbar', AppBaseNavbar)
     .component('AppBaseTableHeader', AppBaseTableHeader)
     .component('AppBaseTableFooter', AppBaseTableFooter)
-    .component('AppBaseImageUploader', AppBaseImageUploader)
-    .component('AppBaseBreadcrumb', AppBaseBreadcrumb);
+    .component('AppBaseWrapper', AppBaseWrapper)
+    .component('AppFormGroup', AppFormGroup);
 
   /**
    * Base Layouts

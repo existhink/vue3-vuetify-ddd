@@ -5,5 +5,6 @@ export { default as AppBaseDialogAlert } from './AppBaseDialogAlert.vue';
 export { default as AppBaseDialog } from './AppBaseDialog.vue';
 export { default as AppBaseBreadcrumb } from './AppBaseBreadcrumb.vue';
 export { default as AppBaseImageUploader } from './AppBaseImageUploader.vue';
+export { default as AppBaseNavbar } from './AppBaseNavbar.vue';
 export { default as AppBaseTableHeader } from './AppBaseTableHeader.vue';
 export { default as AppBaseTableFooter } from './AppBaseTableFooter.vue';

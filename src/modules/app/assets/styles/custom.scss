@@ -1,12 +1,10 @@
-// Font
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+// Fon
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 
 // Element
-
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
 }
 
@@ -29,4 +27,47 @@ body {
   padding-inline-end: 0;
 }
 
+.text-subtitle-2 {
+  font-size: 15px !important;
+}
 
+// Custom class component
+.gap-1 {
+  gap: 4px;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-3 {
+  gap: 12px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+.gap-5 {
+  gap: 20px;
+}
+
+.gap-6 {
+  gap: 24px;
+}
+
+.gap-7 {
+  gap: 28px;
+}
+
+.gap-8 {
+  gap: 32px;
+}
+
+.gap-9 {
+  gap: 36px;
+}
+
+.gap-10 {
+  gap: 40px;
+}
