@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>Test</h1>
-  </div>
+  <section id="dashboard">
+    <DashboardCarousel />
+  </section>
 </template>
 
 <script setup></script>

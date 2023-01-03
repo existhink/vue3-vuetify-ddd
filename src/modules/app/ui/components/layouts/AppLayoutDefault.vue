@@ -1,5 +1,5 @@
 <template>
-  <VApp class="app-main px-16 py-10">
+  <VApp class="app-main">
     <AppBaseNavbar />
     <VMain class="mt-10">
       <RouterView />
