@@ -1,6 +1,6 @@
 <template>
-  <div class="container px-16 py-10">
-    <VAppBar elevation="0" absolute class="app-bar px-10 py-5 rounded-xl">
+  <div class="container px-16 py-10 relative top-0 left-0 right-0 z-2">
+    <VAppBar elevation="0" class="app-bar px-10 py-5 rounded-xl z-1">
       <div class="d-flex justify-space-between w-100">
         <div class="app-logo">
           <img src="~@/modules/app/assets/icons/app-logo.svg" alt="app-logo" />
@@ -91,5 +91,6 @@ const onChangeLanguage = () => {
 <style lang="scss" scoped>
 .app-bar {
   box-shadow: 0 7px 64px 0 rgba(0, 0, 0, 0.07) !important;
+  position: sticky !important;
 }
 </style>

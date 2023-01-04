@@ -7,6 +7,9 @@ import permission from '@/plugins/permission';
 import BaseComponentRegister from '@/modules/app/ui/components';
 import i18n from './plugins/i18n';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 import '@/modules/app/helper/autoload-helper';
 import '@mdi/font/scss/materialdesignicons.scss';
 import '@/modules/app/assets/styles/custom.scss';
