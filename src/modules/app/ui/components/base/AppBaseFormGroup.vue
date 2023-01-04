@@ -44,7 +44,13 @@ const errors = computed(() => {
   }
 
   return props.v.$errors.reduce((errors, error) => {
-    errors.push(VALIDATION_MESSAGE[error.$params.type].params({ attribute: props.name, ...error.$params }));
+    const errorName = error?.$params?.type || error.$validator;
+    errors.push(
+      (VALIDATION_MESSAGE[errorName] ?? `Error : ${errorName}`)?.params({
+        attribute: props.name,
+        ...error.$params,
+      }),
+    );
     return errors;
   }, []);
 });
