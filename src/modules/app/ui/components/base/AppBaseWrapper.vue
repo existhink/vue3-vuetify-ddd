@@ -2,4 +2,8 @@
   <RouterView />
 </template>
 
-<script setup></script>
+<script>
+export default {
+  name: 'AppBaseWrapper',
+};
+</script>
