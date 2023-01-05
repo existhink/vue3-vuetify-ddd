@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test:unit": "vitest --environment jsdom --root src/",
+    "test:unit": "vitest",
+    "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
@@ -30,8 +31,9 @@
     "@mdi/font": "^7.1.96",
     "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/ui": "^0.26.3",
     "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/test-utils": "^2.2.6",
+    "@vue/test-utils": "^2.2.7",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "jsdom": "^20.0.3",
@@ -40,7 +42,7 @@
     "vite": "^4.0.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pwa": "^0.14.0",
-    "vitest": "^0.25.6",
+    "vitest": "^0.26.3",
     "workbox-precaching": "^6.5.4"
   }
 }
