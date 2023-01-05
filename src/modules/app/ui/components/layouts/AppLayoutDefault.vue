@@ -1,9 +1,10 @@
 <template>
-  <VApp class="app-main px-16 py-10">
+  <VApp class="app-main">
     <AppBaseNavbar />
-    <VMain class="mt-10">
+    <VMain class="pa-0">
       <RouterView />
     </VMain>
+    <AppBaseFooter />
   </VApp>
 </template>
 

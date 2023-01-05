@@ -1,7 +1,10 @@
 import {
   AppBaseBreadcrumb,
+  AppBaseCard,
+  AppBaseCardBusiness,
   AppBaseDialog,
   AppBaseDialogAlert,
+  AppBaseFooter,
   AppBaseImageUploader,
   AppBaseLabel,
   AppBaseNavbar,
@@ -25,8 +28,11 @@ const BaseComponentRegister = app => {
    */
   app
     .component('AppBaseBreadcrumb', AppBaseBreadcrumb)
+    .component('AppBaseCard', AppBaseCard)
+    .component('AppBaseCardBusiness', AppBaseCardBusiness)
     .component('AppBaseDialog', AppBaseDialog)
     .component('AppBaseDialogAlert', AppBaseDialogAlert)
+    .component('AppBaseFooter', AppBaseFooter)
     .component('AppBaseImageUploader', AppBaseImageUploader)
     .component('AppBaseLabel', AppBaseLabel)
     .component('AppBaseNavbar', AppBaseNavbar)

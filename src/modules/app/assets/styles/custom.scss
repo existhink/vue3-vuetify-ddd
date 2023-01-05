@@ -1,4 +1,4 @@
-// Fon
+// Font
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 
@@ -6,6 +6,10 @@
 body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
+}
+
+p {
+  color: #383838;
 }
 
 // Easy-table override
@@ -21,10 +25,33 @@ body {
 }
 
 // Override Vuetify
+.v-application {
+  [class*='text-'] {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 15px;
+  }
+  font-family: 'Inter', sans-serif !important;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+.v-application .text-h4, .v-application .text-lg-h4 {
+  font-size: 38px !important;
+  line-height: 50px !important;
+}
+
+.v-application.text-caption {
+  font-size: 14px !important;
+  line-height: 15px;
+}
 
 .v-text-field .v-input__details {
   padding-inline-start: 0;
   padding-inline-end: 0;
+}
+
+.container {
+  padding: 64px 100px;
 }
 
 .text-subtitle-2 {
@@ -32,6 +59,62 @@ body {
 }
 
 // Custom class component
+.w-fit-content {
+  width: fit-content;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+.z-4 {
+  z-index: 4;
+}
+
+.z-5 {
+  z-index: 5;
+}
+
+.z-6 {
+  z-index: 6;
+}
+
 .gap-1 {
   gap: 4px;
 }
@@ -70,4 +153,10 @@ body {
 
 .gap-10 {
   gap: 40px;
+}
+
+.btn-primary {
+  background: #0084F4 !important;
+  color: #fff !important;
+  box-shadow: 0px 7px 15px rgba(64, 180, 253, 0.302874);
 }

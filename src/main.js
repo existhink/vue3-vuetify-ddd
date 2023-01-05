@@ -5,10 +5,11 @@ import autoLoadRoute from '@/modules/app/router';
 import vuetify from '@/plugins/vuetify';
 import permission from '@/plugins/permission';
 import BaseComponentRegister from '@/modules/app/ui/components';
-import { Swiper, SwiperSlide } from 'swiper/vue';
 import i18n from './plugins/i18n';
 
+// Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/pagination';
 import '@/modules/app/helper/autoload-helper';
 import '@mdi/font/scss/materialdesignicons.scss';
 import '@/modules/app/assets/styles/custom.scss';
@@ -24,8 +25,6 @@ const AppInit = async (callback = null) => {
   app.use(router);
   app.use(vuetify);
   app.use(permission);
-  app.use(Swiper);
-  app.use(SwiperSlide);
   app.use(i18n);
 
   // Base Components
