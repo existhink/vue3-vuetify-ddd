@@ -1,0 +1,39 @@
+{
+  "authentication": {
+    "name": "Authentication",
+    "login": {
+      "title": "Welcome in Joven",
+      "subtitle": "A means of investing safely and comfortably",
+      "button": "Login"
+    },
+    "register": {
+      "title": "Register Now",
+      "subtitle": "Already have an account?",
+      "button": "Register"
+    },
+    "forgot_password": {
+      "title": "Forgot Password?",
+      "subtitle": "Enter your email address below and we'll send you instructions on how to reset your password.",
+      "button": "Send"
+    },
+
+    "form": {
+      "first_name": "First Name (As ID Card)",
+      "last_name": "Last Name (As ID Card)",
+      "email": "Email",
+      "phone_number": "Phone Number",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+
+      "placeholder": {
+        "first_name": "Enter your first name",
+        "last_name": "Enter your last name",
+        "phone_code": "+62",
+        "phone_number": "Example: 8123456789",
+        "email": "Enter your email",
+        "password": "Enter your password",
+        "confirm_password": "Confirm password"
+      } 
+    }
+  }
+}

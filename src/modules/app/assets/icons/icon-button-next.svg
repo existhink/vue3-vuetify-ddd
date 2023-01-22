@@ -1,0 +1,24 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon-button/Next">
+<g id="Frame Copy" filter="url(#filter0_d_0_41127)">
+<rect x="15" y="8" width="40" height="40" rx="20" fill="#0084F4"/>
+</g>
+<g id="element icon/ic_arrow_right">
+<g id="element icon/ic_arrow_right_2">
+<rect id="Rectangle" opacity="0.01" x="21.667" y="41.332" width="26.6667" height="26.6667" transform="rotate(-90 21.667 41.332)" fill="white"/>
+<path id="Path" d="M32.967 20.2204C33.3032 20.2192 33.6219 20.3704 33.8337 20.6315L39.2004 27.2981C39.5374 27.7082 39.5374 28.2993 39.2004 28.7093L33.6448 35.3759C33.2521 35.8484 32.5506 35.9131 32.0781 35.5204C31.6056 35.1276 31.541 34.4262 31.9337 33.9537L36.9004 27.9981L32.1004 22.0426C31.8229 21.7096 31.7645 21.2456 31.9506 20.8542C32.1368 20.4627 32.5336 20.2153 32.967 20.2204Z" fill="white"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_41127" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="7"/>
+<feGaussianBlur stdDeviation="7.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.25098 0 0 0 0 0.705882 0 0 0 0 0.992157 0 0 0 0.302874 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_41127"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_41127" result="shape"/>
+</filter>
+</defs>
+</svg>

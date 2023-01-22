@@ -59,6 +59,7 @@ export default {
 
 <style lang="scss">
 #carousel {
+  margin-top: 13rem;
   .swiper {
     width: 100%;
     height: 100%;

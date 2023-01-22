@@ -10,7 +10,7 @@ import { computed } from 'vue';
 import { VALIDATION_MESSAGE } from '@/modules/app/constants/validation.constant';
 
 const props = defineProps({
-  v: {
+  validator: {
     type: Object,
     required: true,
   },
@@ -36,14 +36,14 @@ const props = defineProps({
   },
 });
 
-const invalid = computed(() => props.v.$dirty && props.v.$invalid);
+const invalid = computed(() => props.validator.$dirty && props.validator.$invalid);
 
 const errors = computed(() => {
   if (!invalid.value) {
     return [];
   }
 
-  return props.v.$errors.reduce((errors, error) => {
+  return props.validator.$errors.reduce((errors, error) => {
     const errorName = error?.$params?.type || error.$validator;
     errors.push(
       (VALIDATION_MESSAGE[errorName] ?? `Error : ${errorName}`)?.params({

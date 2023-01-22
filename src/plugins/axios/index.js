@@ -5,17 +5,18 @@ import isEmpty from 'lodash/isEmpty';
 import axios from 'axios';
 
 // Store
-import { useAuthStore } from '@/modules/auth/store/auth.store';
+import { useAuthenticationStore } from '@/modules/authentication/store/authentication.store';
 
 const http = axios.create({
   baseURL: import.meta.env.VITE_APP_API_URL ? `${import.meta.env.VITE_APP_API_URL}/api` : '/api',
 });
 
 http.interceptors.request.use(async config => {
-  const store = useAuthStore();
-  const token = store.auth_token;
+  const store = useAuthenticationStore();
+  const token = store.authentication_token;
   if (!isEmpty(token)) {
-    config.headers['Accept-Language'] = localStorage.getItem('lang') || 'en';
+    config.headers['Accept-Language'] = localStorage.getItem('lang') || 'id';
+    config.headers['Authorization'] = `Bearer ${token}`;
   }
 
   return config;

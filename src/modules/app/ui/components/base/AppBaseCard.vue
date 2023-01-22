@@ -4,11 +4,11 @@
       <slot name="card-header" />
     </div>
 
-    <div class="card-body h-100">
+    <div class="card-body mt-7 mb-5">
       <slot name="card-body" />
     </div>
 
-    <div v-if="$slots.cardFooter" class="card-footer">
+    <div v-if="isUsingCardFooter" class="card-footer">
       <slot name="card-footer" />
     </div>
   </v-card>
@@ -22,6 +22,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    isUsingCardFooter: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -29,6 +33,7 @@ export default {
 <style lang="scss">
 .v-card {
   &.app-base-card {
+    border: 1px solid #edebeb;
     box-shadow: 0px 15px 38px rgba(0, 0, 0, 0.11);
     border-radius: 16px;
   }

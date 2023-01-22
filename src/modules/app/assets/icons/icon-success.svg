@@ -1,15 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="148px" height="148px" viewBox="0 0 148 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>3E618A63-FEE6-4C35-B11B-F8BA8CBB3477@1,5x</title>
-    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="5.-Reset-password---sukses-reset-password" transform="translate(-609.000000, -198.000000)">
-            <g id="element-image/img_success" transform="translate(609.000000, 198.000000)">
-                <rect id="Rectangle" x="0" y="0" width="148" height="148"></rect>
-                <g id="Group-4" transform="translate(8.000000, 26.000000)">
-                    <ellipse id="Oval" fill="#0084F4" opacity="0.11500622" cx="55.706422" cy="57.1121495" rx="55.706422" ry="55.8878505"></ellipse>
-                    <path d="M58.7183116,88 C55.2846418,88 51.8513169,86.5162049 49.8892691,83.5489623 L22.4212902,47.9406608 C18.4971947,42.9951406 19.478391,36.0713428 24.383338,32.1147876 C29.2882849,28.1582324 36.1552797,29.147545 40.0793752,34.0930652 L58.7183116,58.3265313 L99.9206248,4.41959648 C103.84472,-0.525923682 110.711715,-1.51523636 115.616662,2.44131887 C120.521609,6.39787409 121.502805,13.3216719 117.57871,18.267192 L67.5473541,83.5489623 C65.0948806,86.0217224 62.1519814,88 58.7183116,88 Z" id="Path" fill="#2196F3" fill-rule="nonzero"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg width="280" height="154" viewBox="0 0 280 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse opacity="0.141397" cx="140" cy="96.5" rx="140" ry="57.5" fill="url(#paint0_linear_0_45013)"/>
+<g filter="url(#filter0_d_0_45013)">
+<path d="M140 8C106.915 8 80 34.9147 80 68C80 101.085 106.915 128 140 128C173.085 128 200 101.085 200 68C200 34.9147 173.085 8 140 8Z" fill="#00C48C"/>
+</g>
+<path d="M170.403 54.239L135 89.4136C133.938 90.4689 132.544 91 131.149 91C129.755 91 128.361 90.4689 127.299 89.4136L109.598 71.8263C107.467 69.7108 107.467 66.2902 109.598 64.1747C111.727 62.0581 115.169 62.0581 117.299 64.1747L131.149 77.9361L162.702 46.5874C164.831 44.4709 168.273 44.4709 170.403 46.5874C172.532 48.7029 172.532 52.1225 170.403 54.239Z" fill="#FAFAFA"/>
+<defs>
+<filter id="filter0_d_0_45013" x="65" y="0" width="150" height="150" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="7"/>
+<feGaussianBlur stdDeviation="7.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.768627 0 0 0 0 0.54902 0 0 0 0.16 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_45013"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_45013" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_0_45013" x1="48.1372" y1="33.1895" x2="48.1372" y2="108.648" gradientUnits="userSpaceOnUse">
+<stop stop-color="#40B4FD"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
 </svg>
