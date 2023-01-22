@@ -18,8 +18,8 @@ for (const path in modules) {
 }
 
 const i18n = createI18n({
-  locale: localStorage.getItem('lang') || 'en',
-  fallbackLocale: 'en',
+  locale: localStorage.getItem('lang') || 'id',
+  fallbackLocale: 'id',
   messages,
   legacy: false,
 });

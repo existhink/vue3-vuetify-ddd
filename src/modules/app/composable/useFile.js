@@ -1,6 +1,13 @@
 import moment from 'moment';
 
 const useFile = () => {
+  /**
+   * @description Download File
+   *
+   * @param {File} blob
+   * @param {Object} options
+   * @return {void}
+   */
   const file_download = (blob, options = {}) => {
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
