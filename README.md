@@ -1,4 +1,4 @@
-# Joven Public
+# vue3-vuetify-ddd
 
 This template should help get you started developing with Vue 3 in Vite.
 
