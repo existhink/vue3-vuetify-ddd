@@ -1,0 +1,39 @@
+{
+  "authentication": {
+    "name": "Autentikasi",
+    "login": {
+      "title": "Selamat Datang di Joven",
+      "subtitle": "Sarana berinvestasi aman dan nyaman",
+      "button": "Masuk"
+    },
+    "register": {
+      "title": "Daftar Sekarang",
+      "subtitle": "Sudah punya akun joven?",
+      "button": "Daftar"
+    },
+    "forgot_password": {
+      "title": "Lupa Kata Sandi",
+      "subtitle": "Masukkan email yang terdaftar di akun Anda!",
+      "button": "Kirim"
+    },
+    
+    "form": {
+      "first_name": "Nama Depan (Sesuai KTP)",
+      "last_name": "Nama Belakang (Sesuai KTP)",
+      "email": "Email",
+      "phone_number": "No. Ponsel",
+      "password": "Kata Sandi",
+      "confirm_password": "Konfirmasi Kata Sandi",
+
+      "placeholder": {
+        "first_name": "Masukkan nama depan",
+        "last_name": "Masukkan nama belakang",
+        "email": "Masukkan email",
+        "phone_code": "+62",
+        "phone_number": "Contoh: 8123456789",
+        "password": "Masukkan kata sandi",
+        "confirm_password": "Konfirmasi kata sandi"
+      } 
+    }
+  }
+}

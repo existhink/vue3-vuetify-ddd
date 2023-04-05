@@ -55,5 +55,6 @@ const classesCompute = computed(() => {
 <style lang="scss" scoped>
 .app-label {
   font-size: v-bind(fontSize);
+  color: #383838;
 }
 </style>

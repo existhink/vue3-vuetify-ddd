@@ -4,7 +4,9 @@ import {
   AppBaseCardBusiness,
   AppBaseDialog,
   AppBaseDialogAlert,
+  AppBaseErrorMessage,
   AppBaseFooter,
+  AppBaseHero,
   AppBaseImageUploader,
   AppBaseLabel,
   AppBaseNavbar,
@@ -13,7 +15,7 @@ import {
   AppBaseWrapper,
   AppFormGroup,
 } from '@/modules/app/ui/components/base';
-import { AppLayoutDefault, AppLayoutEmpty } from '@/modules/app/ui/components/layouts';
+import { AppLayoutAuthentication, AppLayoutDefault, AppLayoutEmpty } from '@/modules/app/ui/components/layouts';
 import 'vue3-easy-data-table/dist/style.css';
 import AppDataTable from 'vue3-easy-data-table';
 
@@ -32,7 +34,9 @@ const BaseComponentRegister = app => {
     .component('AppBaseCardBusiness', AppBaseCardBusiness)
     .component('AppBaseDialog', AppBaseDialog)
     .component('AppBaseDialogAlert', AppBaseDialogAlert)
+    .component('AppBaseErrorMessage', AppBaseErrorMessage)
     .component('AppBaseFooter', AppBaseFooter)
+    .component('AppBaseHero', AppBaseHero)
     .component('AppBaseImageUploader', AppBaseImageUploader)
     .component('AppBaseLabel', AppBaseLabel)
     .component('AppBaseNavbar', AppBaseNavbar)
@@ -46,6 +50,7 @@ const BaseComponentRegister = app => {
    */
   app.component('EmptyLayout', AppLayoutEmpty);
   app.component('DefaultLayout', AppLayoutDefault);
+  app.component('AuthenticationLayout', AppLayoutAuthentication);
 
   /**
    * DataTable [https://hc200ok.github.io/vue3-easy-data-table-doc/getting-started.html]

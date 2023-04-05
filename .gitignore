@@ -27,7 +27,7 @@ coverage
 *.njsproj
 *.sln
 *.sw?
-.env
+./env
 
 yarn.lock
 package-lock.json
@@ -35,3 +35,10 @@ pnpm-lock.yaml
 
 # Variable
 public/config/variables.js
+
+# Hide Private Files
+src/modules/app/assets/images/article
+src/modules/app/assets/images/faq
+src/modules/app/assets/icons/faq
+src/modules/article
+src/modules/faq
