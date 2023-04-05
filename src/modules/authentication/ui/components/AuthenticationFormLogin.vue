@@ -1,6 +1,5 @@
-<!-- eslint-disable vue/no-mutating-props -->
 <template>
-  <form class="form-group mt-4 mt-md-8 mt-md-12">
+  <form class="form-group">
     <v-row>
       <v-col cols="12">
         <AppFormGroup v-slot="attrs" :validator="validations.email" name="Email" name-as-label>
@@ -41,7 +40,7 @@
 
 <script setup>
 // Vue
-import { defineEmits, defineProps, ref, watch, toRef } from 'vue';
+import { ref, watch, toRef } from 'vue';
 
 // i18n
 import { useI18n } from 'vue-i18n';
@@ -93,8 +92,4 @@ watch(
 );
 </script>
 
-<style lang="scss" scoped>
-form.form-group {
-  min-height: 40vh;
-}
-</style>
+<style lang="scss" scoped></style>

@@ -19,7 +19,7 @@
 
 <script setup>
 // Vue
-import { defineEmits, defineProps, ref, watch, toRef } from 'vue';
+import { ref, watch, toRef } from 'vue';
 
 // i18n
 import { useI18n } from 'vue-i18n';

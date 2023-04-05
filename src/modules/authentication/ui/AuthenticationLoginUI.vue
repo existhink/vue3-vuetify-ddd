@@ -5,7 +5,11 @@
       :subtitle="localization('authentication.login.subtitle')"
     >
       <template #card-body>
-        <AuthenticationFormLogin v-model="formData" :validations="validators" :is-error="isAuthenticationError" />
+        <AuthenticationFormLogin
+          v-model="authentication_formData"
+          :validations="authentication_formLoginValidators"
+          :is-error="authentication_isAuthenticationError"
+        />
       </template>
 
       <template #card-footer>
@@ -16,8 +20,8 @@
             rounded="pill"
             block
             height="54"
-            :loading="isAuthenticationLoading"
-            @click="onSubmit"
+            :loading="authentication_loading"
+            @click="authentication_onSubmitAuthenticationLogin"
             >{{ localization('authentication.login.button') }}</v-btn
           >
 
@@ -35,11 +39,11 @@
       </template>
     </CardAuthentication>
 
-    <AppBaseDialogAlert v-bind="dialog" @ok="onCloseDialogAlert" />
+    <AppBaseDialogAlert v-bind="authentication_dialog" @ok="authentication_onCloseDialogSuccessLogin" />
   </section>
 </template>
 
-<script>
+<script setup>
 // Components
 import AuthenticationFormLogin from './components/AuthenticationFormLogin.vue';
 import CardAuthentication from './components/CardAuthentication.vue';
@@ -47,59 +51,19 @@ import CardAuthentication from './components/CardAuthentication.vue';
 // I18n
 import { useI18n } from 'vue-i18n';
 
-// Lodash - Omit
-import omit from 'lodash/omit';
-
 // Services
 import { useAuthenticationService } from '../services/authentication.service';
-import { useAuthenticationDialogService } from '../services/dialog.service';
 
-export default {
-  name: 'AuthenticationLoginUI',
-  components: {
-    AuthenticationFormLogin,
-    CardAuthentication,
-  },
-  setup() {
-    const { t } = useI18n();
-    const {
-      authentication_formData,
-      authentication_validators,
-      authentication_fetchAuthenticationGetUser,
-      authentication_fetchAuthenticationLogin,
-      authentication_isAuthenticationError,
-      authentication_loading,
-    } = useAuthenticationService();
-    const { dialog, onOpenDialogSuccessLogin, onCloseDialogSuccessLogin } = useAuthenticationDialogService();
-
-    const validators = omit(authentication_validators.value, [
-      'first_name',
-      'last_name',
-      'phone_code',
-      'phone',
-      'confirm_password',
-    ]);
-
-    const onSubmit = async () => {
-      try {
-        await authentication_fetchAuthenticationLogin();
-        await authentication_fetchAuthenticationGetUser();
-        onOpenDialogSuccessLogin();
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    return {
-      dialog,
-      formData: authentication_formData,
-      isAuthenticationLoading: authentication_loading,
-      isAuthenticationError: authentication_isAuthenticationError,
-      localization: t,
-      onCloseDialogAlert: onCloseDialogSuccessLogin,
-      onSubmit,
-      validators,
-    };
-  },
-};
+// Desctructure services
+const { t } = useI18n();
+const localization = t;
+const {
+  authentication_dialog,
+  authentication_formData,
+  authentication_formLoginValidators,
+  authentication_isAuthenticationError,
+  authentication_loading,
+  authentication_onCloseDialogSuccessLogin,
+  authentication_onSubmitAuthenticationLogin,
+} = useAuthenticationService();
 </script>

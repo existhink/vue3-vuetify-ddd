@@ -1,14 +1,11 @@
 <template>
-  <section id="authentication-forgot-password" class="h-100">
+  <section id="authentication-reset-password">
     <CardAuthentication
-      :title="localization('authentication.register.title')"
-      :subtitle="localization('authentication.register.subtitle')"
-      is-using-router-link
-      link-url="/authentication/login"
-      text-link="Masuk"
+      :title="localization('authentication.reset_password.title')"
+      :subtitle="localization('authentication.reset_password.subtitle')"
     >
       <template #card-body>
-        <AuthenticationFormRegister
+        <AuthenticationFormResetPassword
           v-model="authentication_formData"
           :password-validations="authentication_passwordValidations"
           :validations="authentication_formRegisterValidators"
@@ -25,7 +22,7 @@
             height="54"
             :loading="authentication_loading"
             @click="authentication_onSubmitAuthenticationRegister"
-            >{{ localization('authentication.register.button') }}</v-btn
+            >{{ localization('authentication.reset_password.button') }}</v-btn
           >
         </div>
       </template>
@@ -37,7 +34,7 @@
 
 <script setup>
 // Components
-import AuthenticationFormRegister from './components/AuthenticationFormRegister.vue';
+import AuthenticationFormResetPassword from './components/AuthenticationFormResetPassword.vue';
 import CardAuthentication from './components/CardAuthentication.vue';
 
 // I18n
