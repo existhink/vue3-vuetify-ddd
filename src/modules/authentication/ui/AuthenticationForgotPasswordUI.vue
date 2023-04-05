@@ -5,18 +5,22 @@
       :subtitle="localization('authentication.forgot_password.subtitle')"
     >
       <template #card-body>
-        <AuthenticationFormForgotPassword v-model="formData" :validations="validators" />
+        <AuthenticationFormForgotPassword
+          v-model="authentication_formData"
+          :validations="authentication_formForgotPasswordValidators"
+        />
       </template>
 
       <template #card-footer>
         <div class="d-flex flex-column gap-5 w-100">
           <v-btn
+            :loading="authentication_loading"
             color="white"
             class="bg-primary text-uppercase text-subtitle-1 py-4"
             rounded="pill"
             block
             height="54"
-            @click="onSubmit"
+            @click="authentication_onSubmitAuthenticationForgotPassword"
             >{{ localization('authentication.forgot_password.button') }}</v-btn
           >
 
@@ -32,60 +36,30 @@
       </template>
     </CardAuthentication>
 
-    <AppBaseDialogAlert v-bind="dialog" @ok="onCloseAlert" />
+    <AppBaseDialogAlert v-bind="authentication_dialog" @ok="authentication_onCloseDialogSuccessLogin" />
   </section>
 </template>
 
-<script>
+<script setup>
 // Components
 import AuthenticationFormForgotPassword from './components/AuthenticationFormForgotPassword.vue';
 import CardAuthentication from './components/CardAuthentication.vue';
-
-// Lodash - Omit
-import omit from 'lodash/omit';
 
 // I18n
 import { useI18n } from 'vue-i18n';
 
 // Services
 import { useAuthenticationService } from '../services/authentication.service';
-import { useAuthenticationDialogService } from '../services/dialog.service';
 
-export default {
-  name: 'AuthenticationForgotPasswordUI',
-  components: {
-    AuthenticationFormForgotPassword,
-    CardAuthentication,
-  },
-  setup() {
-    const { t } = useI18n();
-    const {
-      authentication_formData,
-      authentication_validators,
-      authentication_fetchAuthenticationForgotPassword,
-    } = useAuthenticationService();
-    const { dialog, onOpenDialogSuccess } = useAuthenticationDialogService();
-    const validators = omit(authentication_validators.value, [
-      'first_name',
-      'last_name',
-      'phone_code',
-      'phone',
-      'password',
-      'confirm_password',
-    ]);
-
-    const onSubmit = async () => {
-      await authentication_fetchAuthenticationForgotPassword();
-      onOpenDialogSuccess();
-    };
-
-    return {
-      dialog,
-      formData: authentication_formData,
-      localization: t,
-      onSubmit,
-      validators,
-    };
-  },
-};
+// Desctructure services
+const { t } = useI18n();
+const localization = t;
+const {
+  authentication_dialog,
+  authentication_formData,
+  authentication_formForgotPasswordValidators,
+  authentication_loading,
+  authentication_onCloseDialogSuccessLogin,
+  authentication_onSubmitAuthenticationForgotPassword,
+} = useAuthenticationService();
 </script>

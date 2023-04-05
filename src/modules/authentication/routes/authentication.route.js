@@ -33,6 +33,14 @@ const routes = [
           layout: LAYOUT.AUTHENTICATION,
         },
       },
+      {
+        path: 'reset-password',
+        name: 'authenticationResetPassword',
+        component: () => import('../ui/AuthenticationResetPasswordUI.vue'),
+        meta: {
+          layout: LAYOUT.AUTHENTICATION,
+        },
+      },
     ],
   },
 ];

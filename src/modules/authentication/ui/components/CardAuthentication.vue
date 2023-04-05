@@ -1,5 +1,7 @@
 <template>
-  <v-card class="custom-shadow-card pa-10 pa-md-15 bg-white h-100 mr-5 rounded-xl">
+  <v-card
+    class="custom-shadow-card pa-10 pa-md-12 bg-white h-100 rounded-xl mr-5 d-flex flex-column justify-space-between"
+  >
     <v-card-title>
       <div class="d-flex flex-column gap-9">
         <img src="@/modules/app/assets/icons/app-logo.svg" alt="app-logo" class="app-logo" />
@@ -30,7 +32,33 @@
   </v-card>
 </template>
 
-<script>
+<script setup>
+// eslint-disable-next-line no-unused-vars
+const props = defineProps({
+  title: {
+    type: String,
+    default: '',
+  },
+  subtitle: {
+    type: String,
+    default: '',
+  },
+  isUsingRouterLink: {
+    type: Boolean,
+    default: false,
+  },
+  linkUrl: {
+    type: String,
+    default: '',
+  },
+  textLink: {
+    type: String,
+    default: '',
+  },
+});
+</script>
+
+<!-- <script>
 export default {
   name: 'CardAuthentication',
   props: {
@@ -56,7 +84,7 @@ export default {
     },
   },
 };
-</script>
+</script> -->
 
 <style lang="scss">
 .v-card {

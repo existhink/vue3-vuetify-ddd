@@ -16,6 +16,11 @@
       "subtitle": "Masukkan email yang terdaftar di akun Anda!",
       "button": "Kirim"
     },
+    "reset_password": {
+      "title": "Buat Kata Sandi Baru Anda",
+      "subtitle": "Atur kata sandi baru untuk ",
+      "button": "Simpan"
+    },
     
     "form": {
       "first_name": "Nama Depan (Sesuai KTP)",

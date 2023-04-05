@@ -31,7 +31,6 @@ export const useAuthenticationStore = defineStore('authentication', {
       try {
         this.authentication_loading = true;
         const response = await http.post(AUTHENTICATION_LOGIN, payload, { ...requestConfig });
-        console.log(response.data.data, 'res');
         this.authentication_token = response.data.data.token;
 
         return Promise.resolve(response.data.data);
